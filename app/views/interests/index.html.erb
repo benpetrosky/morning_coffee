@@ -1,0 +1,9 @@
+<h1>Your interests that you can add to your search!</h1>
+
+<ul>
+  <% @interests.each do |interest| %>
+    <li><%= interest.interest_name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Home', root_path %>
