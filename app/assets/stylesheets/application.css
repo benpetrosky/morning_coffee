@@ -17,3 +17,8 @@
 .searchable-interests {
   float: right;
 }
+
+.feed-box{
+  border-style: solid;
+  border-color: black;
+}

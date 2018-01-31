@@ -67,3 +67,20 @@
   <li>User Sign Out</li>
   <li>User Sign in</li>
 </ul>
+
+<hr>
+<% if @user.interests.where(searchable: true).any? %>
+<div class="feed-box">
+  <h1><%= @user.interests.where(searchable: true).first.interest_name %></h1>
+  <ul>
+    <% @feedItems.items.each do |feedItem| %>
+    <li>
+      <%= feedItem.title %>
+    </li>
+
+    <% end %>
+
+  </ul>
+
+</div>
+<% end %>
