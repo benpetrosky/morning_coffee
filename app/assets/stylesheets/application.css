@@ -16,6 +16,8 @@
 
 .searchable-interests {
   float: right;
+  top: 0;
+  background-color: green;
 }
 
 .feed-box{

@@ -36,6 +36,9 @@ gem 'jquery-rails'
 gem 'devise'
 gem "google_custom_search_api"
 
+gem "react_on_rails", "10.0.0"
+gem "webpacker", "~> 3.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -44,7 +47,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'dotenv-rails'
-  
+
 end
 
 group :development do
