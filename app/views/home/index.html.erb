@@ -4,9 +4,10 @@
   <h1>email: <%= current_user.email %></h1>
   <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %> | <%= link_to "Edit my Account Password", edit_user_registration_path %>
 
+
+<!-- List of user interests start -->
 <% if current_user.interests.any? %>
   <h4>Here is a list of your interestests:</h4>
-
   <ul>
     <% @user.interests.each do |interest| %>
     <% if interest.searchable === false %>
@@ -39,6 +40,9 @@
 <%= link_to "ADD AN INTEREST", new_user_interest_path(@user) %>
 <% end %>
 
+<!-- List of user interests end -->
+
+<!-- List of user searchable: true interests-->
 <div class="searchable-interests">
   <h1>Here are searchable interests</h1>
   <% if current_user %>
@@ -58,6 +62,8 @@
 
 </div>
 
+<!-- List of user interests end -->
+
 <ul>
   <li><%= link_to "Sign Up", new_user_registration_path %></li>
 
@@ -69,18 +75,74 @@
 </ul>
 
 <hr>
-<% if @user.interests.where(searchable: true).any? %>
+<% if @user.interests.where(searchable: true).first %>
+
+<!-- Searchable interest(1) pane -->
 <div class="feed-box">
   <h1><%= @user.interests.where(searchable: true).first.interest_name %></h1>
   <ul>
-    <% @feedItems.items.each do |feedItem| %>
+    <% @feed1.items.each do |feedItem| %>
     <li>
       <%= feedItem.title %>
     </li>
-
     <% end %>
-
   </ul>
-
 </div>
+
+<!-- Searchable interest(2) pane -->
+<% if @user.interests.where(searchable: true).second %>
+<div class="feed-box">
+  <h1><%= @user.interests.where(searchable: true).second.interest_name %></h1>
+  <ul>
+    <% @feed2.items.each do |feedItem2| %>
+    <li>
+      <%= feedItem2.title %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<!-- Searchable interest(3) pane -->
+
+<% if @user.interests.where(searchable: true).third %>
+<div class="feed-box">
+  <h1><%= @user.interests.where(searchable: true).third.interest_name %></h1>
+  <ul>
+    <% @feed3.items.each do |feedItem| %>
+    <li>
+      <%= feedItem.title %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- Searchable interest(4) pane -->
+<% if @user.interests.where(searchable: true).fourth %>
+<div class="feed-box">
+  <h1><%= @user.interests.where(searchable: true).fourth.interest_name %></h1>
+  <ul>
+    <% @feed4.items.each do |feedItem4| %>
+    <li>
+      <%= feedItem4.title %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- Searchable interest(5) pane -->
+<% if @user.interests.where(searchable: true).fifth %>
+<div class="feed-box">
+  <h1><%= @user.interests.where(searchable: true).fifth.interest_name %></h1>
+  <ul>
+    <% @feed5.items.each do |feedItem5| %>
+    <li>
+      <%= feedItem5.title %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <% end %>

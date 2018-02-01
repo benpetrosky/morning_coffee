@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'news/index'
+  # get 'news/index'
 
    root :to => 'home#index'
 
